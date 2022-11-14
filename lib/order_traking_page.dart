@@ -16,8 +16,8 @@ class OrderTrackingPage extends StatefulWidget {
 class OrderTrackingPageState extends State<OrderTrackingPage> {
   final Completer<GoogleMapController> _controller = Completer();
 
-  static const LatLng sourceLocation = LatLng(37.5509, 126.9410);
-  static const LatLng destination = LatLng(37.5658, 126.9386);
+  static const LatLng sourceLocation = LatLng(37.5208, 127.0227);
+  static const LatLng destination = LatLng(37.5260, 127.0364);
 
   List<LatLng> polylineCoordinates = [];
   LocationData? currentLocation;
