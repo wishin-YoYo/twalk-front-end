@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import '../common.dart' as common;
-import '../constants.dart' as constants;
+import '../constants/common.dart' as common;
+import '../constants/constants.dart' as constants;
 import '../widgets/profile_image.dart';
 import '../widgets/pvp_profile.dart';
 import '../widgets/pvp_list.dart';
 import '../widgets/pvp_score.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: PvpPage(),
   ));
 }
@@ -17,22 +17,21 @@ class PvpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body:Container(
-        child: Column(
-          children: [
+    return Container(
+      child: Column(
+        children: [
           Container(
-              padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
+              decoration: const BoxDecoration(
                 color: common.greyColor,
               ),
               child: Column(
                 children: [
                   PvpProfile(
                     imageSize: 80,
-                    padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
-                    leading: ProfileImage(80),
-                    contentPadding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                    padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+                    leading: const ProfileImage(80),
+                    contentPadding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                     title: Text(
                       'Hello, 엠마!',
                       style: TextStyle(
@@ -47,12 +46,12 @@ class PvpPage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: common.h3Size,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xff30c665),
+                        color: const Color(0xff30c665),
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ),
-                  PvpScore(
+                  const PvpScore(
                     wins: 47,
                     loses: 0,
                     backgroundColor: common.greyColor,
@@ -66,8 +65,6 @@ class PvpPage extends StatelessWidget {
           PvpList(),
         ],
       ),
-    ));
+    );
   }
 }
-
-

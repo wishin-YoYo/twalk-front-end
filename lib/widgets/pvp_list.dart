@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../common.dart' as common;
-import '../constants.dart' as constants;
+import '../constants/common.dart' as common;
+import '../constants/constants.dart' as constants;
 import './profile_image.dart';
 import './pvp_profile.dart';
 import './pvp_score.dart';

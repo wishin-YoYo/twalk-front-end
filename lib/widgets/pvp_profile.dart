@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../common.dart' as common;
+import '../constants/common.dart' as common;
 import './profile_image.dart';
 
 class PvpProfile extends StatelessWidget {
