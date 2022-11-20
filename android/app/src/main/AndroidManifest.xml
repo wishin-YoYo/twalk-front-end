@@ -1,11 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.twalk_app">
-   <application
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
         android:label="twalk_app"
         android:icon="@mipmap/ic_launcher">
 
-       <meta-data android:name="com.google.android.geo.API_KEY"
-           android:value="AIzaSyCM29pNWF2JZFCFxb3GOtz0wZZ0RfPO2q0" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCM29pNWF2JZFCFxb3GOtz0wZZ0RfPO2q0" />
 
         <activity
             android:name=".MainActivity"

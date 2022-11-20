@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import './common.dart' as common;
-import './constants.dart' as constants;
-import './widgets/profile_image.dart';
-import './widgets/pvp_profile.dart';
-import './widgets/pvp_list.dart';
-import './widgets/pvp_score.dart';
+import '../common.dart' as common;
+import '../constants.dart' as constants;
+import '../widgets/profile_image.dart';
+import '../widgets/pvp_profile.dart';
+import '../widgets/pvp_list.dart';
+import '../widgets/pvp_score.dart';
 
 void main() {
   runApp(MaterialApp(
