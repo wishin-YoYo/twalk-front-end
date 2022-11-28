@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../constants/constants.dart';
+import '../constants/common.dart';
 
 class RiderInfo extends StatelessWidget {
   const RiderInfo({
