@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 import 'dart:convert'; // FOR JSON CONVERTING
 import '../constants/common.dart' as common;
 import '../constants/constants.dart' as constants;
 import '../widgets/profile_image.dart';
 import '../widgets/pvp_profile.dart';
-import '../widgets/pvp_list.dart';
-import '../widgets/pvp_score.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: MyPage(),
+  runApp(MultiProvider(
+    providers: [],
+    child: MaterialApp(
+      home: MyPage(),
+    ),
   ));
 }
 
@@ -22,7 +23,6 @@ class MyPage extends StatefulWidget {
 }
 
 class _MyPageState extends State<MyPage> {
-
   final cardMargin = const EdgeInsets.fromLTRB(15, 15, 15, 0);
   final cardBorderRadius = BorderRadius.circular(16.0);
 
@@ -74,7 +74,7 @@ class _MyPageState extends State<MyPage> {
                       style: TextStyle(
                         fontSize: common.h3Size,
                         fontWeight: FontWeight.bold,
-                        color: constants.primaryColor,
+                        color: common.primaryColor,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
@@ -85,7 +85,7 @@ class _MyPageState extends State<MyPage> {
                         borderRadius: cardBorderRadius,
                       ),
                       child: Container(
-                        padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                        padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
                         child: Row(
                           children: const [
                             Expanded(
@@ -95,7 +95,7 @@ class _MyPageState extends State<MyPage> {
                                     size: 40),
                                 title: Text('총 칼로리',
                                     style: TextStyle(
-                                      color: constants.primaryColor,
+                                      color: common.primaryColor,
                                       fontSize: 14,
                                     )),
                                 subtitle: Text('546 kcal',
@@ -113,7 +113,7 @@ class _MyPageState extends State<MyPage> {
                                 title: Text(
                                   '총 이동거리',
                                   style: TextStyle(
-                                    color: constants.primaryColor,
+                                    color: common.primaryColor,
                                     fontSize: 14,
                                   ),
                                 ),

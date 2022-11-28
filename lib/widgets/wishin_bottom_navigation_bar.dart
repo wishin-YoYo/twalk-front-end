@@ -18,7 +18,7 @@ class WishinBottomNavigaionBar extends StatelessWidget {
         selectedItemColor: Colors.black,
         iconSize: 40,
         currentIndex: pageIndex,
-        items: [
+        items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.local_fire_department_outlined), label: 'PvP'),
           BottomNavigationBarItem(
