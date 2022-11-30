@@ -7,6 +7,8 @@ import 'package:twalk_app/widgets/google_maps_marker_icon_generator.dart';
 import 'package:twalk_app/widgets/rest_api_caller.dart';
 import 'package:twalk_app/constants/common.dart' as common;
 
+import '../widgets/pedometer.dart';
+
 class MapPage extends StatefulWidget {
   const MapPage({super.key});
 
@@ -96,20 +98,26 @@ class MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GoogleMap(
-        markers: Set.from(markers),
-        mapType: MapType.normal,
-        initialCameraPosition: CameraPosition(
-          zoom: _zoom,
-          target: currentLocationLatLng,
-        ),
-        onMapCreated: (GoogleMapController controller) {
-          setState(() {
-            _controller = controller;
-          });
-        },
-        myLocationEnabled: false,
-        zoomControlsEnabled: false,
+      body: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          GoogleMap(
+            markers: Set.from(markers),
+            mapType: MapType.normal,
+            initialCameraPosition: CameraPosition(
+              zoom: _zoom,
+              target: currentLocationLatLng,
+            ),
+            onMapCreated: (GoogleMapController controller) {
+              setState(() {
+                _controller = controller;
+              });
+            },
+            myLocationEnabled: false,
+            zoomControlsEnabled: false,
+          ),
+          const Pedometer(1000),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: jalking ? common.primaryColor : common.greyColor,
