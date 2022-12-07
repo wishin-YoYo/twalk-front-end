@@ -1,7 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.twalk_app">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+
     <application
         android:label="twalk_app"
         android:icon="@mipmap/ic_launcher">

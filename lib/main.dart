@@ -10,6 +10,7 @@ void main() => runApp(MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (c) => UserStore()),
       ],
+
       child: MaterialApp(
           title: 'Flutter Demo',
           debugShowCheckedModeBanner: false,
@@ -22,8 +23,9 @@ void main() => runApp(MultiProvider(
           ),
           home: MyApp()),
     ));
-
 //////////////////////////////////////////////////////
+
+
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
@@ -41,6 +43,7 @@ class _MyAppState extends State<MyApp> {
       pageIndex = index;
     });
   }
+
 
   @override
   Widget build(BuildContext context) {
