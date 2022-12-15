@@ -30,7 +30,8 @@ class PvpPage extends StatelessWidget {
                   PvpProfile(
                     imageSize: 80,
                     padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
-                    leading: const ProfileImage(80),
+                    leading:
+                        const ProfileImage(80, 'assets/images/profile1.png'),
                     contentPadding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                     title: Text(
                       'Hello, 엠마!',

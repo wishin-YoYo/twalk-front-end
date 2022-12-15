@@ -49,7 +49,6 @@ class OrderTrackingPageState extends State<OrderTrackingPage> {
                   LatLng(point.latitude, point.longitude),
               ),
       );
-      setState(() {});
     }
   }
 
