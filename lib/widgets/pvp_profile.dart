@@ -37,6 +37,7 @@ class PvpProfile extends StatelessWidget {
                 padding: contentPadding,
                 width: double.infinity,
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     title,

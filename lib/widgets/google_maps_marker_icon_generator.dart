@@ -14,9 +14,6 @@ class MarkerGenerator {
 
     final Radius radius = Radius.circular(size.width / 2);
 
-    final Paint tagPaint = Paint()..color = color;
-    final double tagWidth = 40.0;
-
     final Paint shadowPaint = Paint()..color = color.withAlpha(100);
     final double shadowWidth = 15.0;
 
@@ -48,30 +45,6 @@ class MarkerGenerator {
         ),
         borderPaint);
 
-    // Add tag circle
-    canvas.drawRRect(
-        RRect.fromRectAndCorners(
-          Rect.fromLTWH(size.width - tagWidth, 0.0, tagWidth, tagWidth),
-          topLeft: radius,
-          topRight: radius,
-          bottomLeft: radius,
-          bottomRight: radius,
-        ),
-        tagPaint);
-
-    // Add tag text
-    TextPainter textPainter = TextPainter(textDirection: TextDirection.ltr);
-    textPainter.text = TextSpan(
-      text: '1',
-      style: TextStyle(fontSize: 20.0, color: Colors.white),
-    );
-
-    textPainter.layout();
-    textPainter.paint(
-        canvas,
-        Offset(size.width - tagWidth / 2 - textPainter.width / 2,
-            tagWidth / 2 - textPainter.height / 2));
-
     // Oval for the image
     Rect oval = Rect.fromLTWH(imageOffset, imageOffset,
         size.width - (imageOffset * 2), size.height - (imageOffset * 2));
@@ -80,9 +53,7 @@ class MarkerGenerator {
     canvas.clipPath(Path()..addOval(oval));
 
     // Add image
-    // ui.Image image = await getImageFromPath(
-    //     "/Users/a1/Desktop/Flutter_envs/twalk-front-end/assets/Avatar.png"); // Alternatively use your own method to get the image
-    ui.Image image = await getUiImage("assets/Avatar.png", 150, 150);
+    ui.Image image = await getUiImage(imagePath, 150, 150);
     paintImage(canvas: canvas, image: image, rect: oval, fit: BoxFit.fitWidth);
 
     // Convert canvas to image

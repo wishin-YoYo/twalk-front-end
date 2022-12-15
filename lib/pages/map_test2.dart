@@ -38,9 +38,9 @@ class MapSampleState extends State<MapSample> {
     _markers.add(Marker(
       markerId: const MarkerId("1"),
       draggable: true,
-      onTap: () => print("Marker!"),
       position: const LatLng(37.42796133580664, -122.085749655962),
-      icon: await getMarkerIcon("assets/Avatar.png", Size(150.0, 150.0)),
+      icon:
+          await getMarkerIcon("assets/images/profile1.png", Size(150.0, 150.0)),
     ));
   }
 
@@ -152,8 +152,6 @@ class MapSampleState extends State<MapSample> {
     canvas.clipPath(Path()..addOval(oval));
 
     // Add image
-    // ui.Image image = await getImageFromPath(
-    //     "/Users/a1/Desktop/Flutter_envs/twalk-front-end/assets/Avatar.png"); // Alternatively use your own method to get the image
     ui.Image image = await getUiImage("assets/Avatar.png", 150, 150);
     paintImage(canvas: canvas, image: image, rect: oval, fit: BoxFit.fitWidth);
 
